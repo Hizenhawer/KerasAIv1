@@ -41,6 +41,8 @@ model.fit(x=x_train,y=y_train, epochs=10)
 
 model.evaluate(x_test, y_test)
 
+model.save('my_model.h5')
+
 #Testowanie sieci na jednej konkretnej cyfrze.
 image_index = 4444
 plt.imshow(x_test[image_index].reshape(28, 28),cmap='Greys')
