@@ -2,11 +2,12 @@ import tensorflow as tf
 from keras import Sequential
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D
 import matplotlib.pyplot as plt
+import globals
 
 #Pobieranie danych mnist i dzielenie ich na nauczycielia i ucznia
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-#Tak można wyświetlić dane mnistu
+#Tak mozna wyswietlic dane mnistu
 #image_index = 7777 # You may select anything up to 60,000
 #print(y_train[image_index]) # The label is 8
 #plt.imshow(x_train[image_index], cmap='Greys')
@@ -41,7 +42,7 @@ model.fit(x=x_train,y=y_train, epochs=10)
 
 model.evaluate(x_test, y_test)
 
-model.save('my_model.h5')
+model.save(globals.MODEL_PATH)
 
 #Testowanie sieci na jednej konkretnej cyfrze.
 image_index = 4444
